@@ -3,19 +3,20 @@ using namespace std;
 
 int main() {
     float cal [6];
+    cal[5]=0;
 
-    cout << "Ingrese 5 calificaciones: " << endl;
-    cin >> cal [0] >> cal [1] >> cal [2] >> cal [3] >> cal [4];
+    for (int i=0; i<5; i++) {
+    cout << "Ingrese la calificacion " << i+1 << ": ";
+    cin >> cal [i];
+    cal [5] += cal [i];
+    }
+    cal[5] = cal[5] / 5.0;
 
-    cal [5] = (cal [0] + cal [1] + cal [2] + cal [3] + cal [4]) / 5;
+    cout << "Estas fueron sus calificaciones: \n" << endl;
+    for (int i=0; i<5; i++){
+    cout << "Calificacion " << i+1 << " :" << cal [i] << endl;
+    }
 
-    cout << "Estas fueron sus calificaciones: " << endl;
-    cout << cal [0] << endl;
-    cout << cal [1] << endl;
-    cout << cal [2] << endl;
-    cout << cal [3] << endl;
-    cout << cal [4] << endl;
-    cout << "Su promedio es de: " << cal [5] << endl;
-
+    cout << "\nSu promedio es de: " << cal [5] << endl;
     return 0;
 }
